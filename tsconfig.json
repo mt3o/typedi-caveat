@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+
+        "importsNotUsedAsValues": "preserve",//uncommenting enables (1) when test imports class explicitly
+
+        "experimentalDecorators": true, //required for TypeDI
+        "emitDecoratorMetadata": true,
+
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": true,
+        "declaration": true,
+        "lib": [
+            "ES2021"
+        ],
+       //"strict": true, //just dont.
+        "moduleResolution":  "node",
+        "target": "ES2021",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "jsx": "react",
+        "jsxFactory": "h",
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/types"
+        ],
+        "esModuleInterop": true,
+        "outDir": "out",
+        "sourceMap": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+        "src",
+        "types/jsx.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "out",
+        "sample",
+        "**/*.spec.ts",
+        "test/**"
+    ]
+}
