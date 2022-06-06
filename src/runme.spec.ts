@@ -18,8 +18,8 @@ describe('broken injections',()=>{
         expect(o.whoami()).toEqual("Foobaz")
     });
 
-    it('(3) injects by class name thats imported',()=>{
-        const o: AbstractFoobar=Container.get(Foobaz)
+    it('(3) injects by class name thats imported',()=>{ // Foobaz has id, so it can be imported
+        const o: AbstractFoobar=Container.get(Foobaz)            // Adding the ID enables (2) and disables (3)
         expect(o).toBeDefined();
         expect(o.whoami()).toEqual("Foobaz")
     });
